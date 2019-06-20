@@ -8,6 +8,12 @@
       <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">Enter a name</div>
     </div>
 
+    <button type="button" class="btn btn-primary" name="singleModel"
+            [(ngModel)]="singleModel" btnCheckbox
+            btnCheckboxTrue="On" btnCheckboxFalse="Off">
+      {{ singleModel }}
+    </button>
+
     <div class="form-check form-group">
       <input type="checkbox" class="form-check-input" id="emailOffers" name="emailOffers" [(ngModel)]="userSettings.emailOffers">
       <label class="form-check-label" for="emailOffers">Email Special Offers</label>
@@ -15,17 +21,14 @@
 
     <p>User Interface Style</p>
     <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="interface" id="lightInterface" value="light" checked [(ngModel)]="userSettings.interfaceStyle">
-        <label for="lightInterface" class="form-check-label">Light</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="interface" id="mediumInterface" value="medium" [(ngModel)]="userSettings.interfaceStyle">
-        <label for="mediumInterface" class="form-check-label">Medium</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="interface" id="darkInterface" value="dark" [(ngModel)]="userSettings.interfaceStyle">
-        <label for="darkInterface" class="form-check-label">Dark</label>
+
+      <div class="btn-group">
+        <label class="btn btn-primary" [(ngModel)]="userSettings.interfaceStyle" name="interfaceStyle"
+              btnRadio="Light" tabindex="0" role="button">Light</label>
+        <label class="btn btn-primary" [(ngModel)]="userSettings.interfaceStyle" name="interfaceStyle"
+              btnRadio="Medium" tabindex="0" role="button">Medium</label>
+        <label class="btn btn-primary" [(ngModel)]="userSettings.interfaceStyle" name="interfaceStyle"
+              btnRadio="Dark" tabindex="0" role="button">Dark</label>
       </div>
     </div>
     
