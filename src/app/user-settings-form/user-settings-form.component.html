@@ -8,6 +8,17 @@
       <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">Enter a name</div>
     </div>
 
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+        <input type="text"
+           placeholder="Start Date"
+           class="form-control"
+           [(ngModel)]="startDate" name="startDate" id="startDate"
+           bsDatepicker>
+    </div>
+    
+    Start date: {{ startDate }}
+
     <button type="button" class="btn btn-primary" name="singleModel"
             [(ngModel)]="singleModel" btnCheckbox
             btnCheckboxTrue="On" btnCheckboxFalse="Off">

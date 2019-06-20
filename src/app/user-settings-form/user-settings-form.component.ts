@@ -21,6 +21,7 @@ export class UserSettingsFormComponent implements OnInit {
 
   singleModel = 'On';
 
+  startDate: Date;
   originalUserSettings: UserSettings = { ...this.userSettings };
   postError = false;
   postErrorMessage = '';
@@ -30,6 +31,8 @@ export class UserSettingsFormComponent implements OnInit {
 
   ngOnInit() {
     this.subscriptionTypes = this.dataService.getSubscriptionTypes();
+
+    this.startDate = new Date();
   }
 
   onHttpError(errorResponse: any) {
